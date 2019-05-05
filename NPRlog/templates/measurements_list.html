@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+
+
+{% block content_logged_in %}
+
+
+
+<div class="container text-center">
+<div class="col text-center">
+        <table class="col table-responsive-sm table-hover table-bordered text-center table-striped">
+            <thead class="thead-dark">
+            <tr class="thead-dark">
+
+                <th>Data</th>
+                <th>Dzień cyklu</th>
+                <th>Temperatura</th>
+                <th>Śluz płodny</th>
+                <th>Śluz niepłodny</th>
+                <th>Stres?</th>
+                <th>Choroba?</th>
+                <th>Pomiar nie w czasie?</th>
+                <th>Uwagi</th>
+
+                <th>Opcje</th>
+
+                
+
+            </tr>
+
+
+            </thead>
+
+                {% for sample in samples %}
+                <tr>
+
+                    <td>
+                        <a href="{% url  'edit-measurement' sample.id%}">{{sample.date}}</a>
+                    </td>
+                    <td>
+                        {{sample.period_day}}
+                    </td>
+                    <td>{{sample.temperature}}</td>
+                    <td> {{sample.get_fertile_mucus_display}}
+                    </td>
+                    <td> {{sample.get_not_fertile_mucus_display}}
+                    </td>
+                    <td>{{sample.get_stressed_display}}</td>
+                    <td>{{sample.get_sick_display}}</td>
+                    <td>{{sample.get_out_of_time_display}}</td>
+                    <td>{{sample.remarks}}</td>
+                    
+
+                    <td><a href="/delete_measurement/{{sample.id}}">Usuń próbkę</a></td>
+                </tr>
+                {% endfor %}
+        </table>
+    </div>
+<a href="{% url 'home_view' %}">strona startowa</a>
+    </div>
+
+{% endblock %}
+

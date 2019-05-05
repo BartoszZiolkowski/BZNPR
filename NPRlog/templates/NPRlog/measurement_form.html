@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+{% block content_logged_in %}
+    <h2 class="text-center">Pomiar temperatury</h2>
+
+    <form method="post" class="text-center"> {% csrf_token %}
+        {{form.as_p}}
+        <input class="btn btn-lg btn-primary" type="submit" value="Zapisz" />
+
+
+
+    </form>
+    <br>
+<div class="text-center">
+<a  href="{% url 'home_view' %}">strona startowa</a>
+</div>
+
+{% endblock %}
