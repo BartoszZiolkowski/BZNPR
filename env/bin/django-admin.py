@@ -1,4 +1,4 @@
-#!/home/bartosz/Desktop/Kurs/Python/ChemInventoryBZ/env/bin/python3
+#!/home/bartosz/Desktop/BZNPR/env/bin/python3
 from django.core import management
 
 if __name__ == "__main__":

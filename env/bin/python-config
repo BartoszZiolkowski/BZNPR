@@ -1,4 +1,4 @@
-#!/home/bartosz/Desktop/Kurs/Python/ChemInventoryBZ/env/bin/python
+#!/home/bartosz/Desktop/BZNPR/env/bin/python
 
 import sys
 import getopt
